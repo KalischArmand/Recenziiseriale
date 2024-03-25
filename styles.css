@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.slider {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    display: block;
+}
+
+.reviews {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.review-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
