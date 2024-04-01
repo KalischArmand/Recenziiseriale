@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rate this content</h1>
+        <form id="rating-form">
+            <label for="rating">Your Rating:</label>
+            <select id="rating" name="rating">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ratingForm = document.getElementById('rating-form');
+            const ratingSelect = document.getElementById('rating');
+
+            ratingForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+                const selectedRating = ratingSelect.value;
+                saveRating(selectedRating);
+                alert('Rating submitted successfully!');
+            });
+
+            function saveRating(rating) {
+                // Save the rating to localStorage (replace 'content_id' with the actual content ID)
+                localStorage.setItem('content_id', rating);
+            }
+
+            function getRating() {
+                // Retrieve the rating from localStorage (replace 'content_id' with the actual content ID)
+                return localStorage.getItem('content_id');
+            }
+
+            // Example: Display the current rating when the page loads
+            const savedRating = getRating();
+            if (savedRating) {
+                alert('Your current rating: ' + savedRating);
+            }
+        });
+    </script>
+</body>
+</html>
